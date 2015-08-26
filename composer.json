@@ -1,0 +1,28 @@
+{
+    "name": "kuakling/yii2-keditor",
+    "description": "CKEditor and KCFinder",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "GPL-3.0",
+    "authors": [
+        {
+            "name": "Surakit Choodeet",
+            "email": "kuakling@gmail.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "*",
+        "bower-asset/ckeditor": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "kuakling\\keditor\\": ""
+        }
+    },
+    "extra": {
+        "asset-installer-paths": {
+            "npm-asset-library": "vendor/npm",
+            "bower-asset-library": "vendor/bower"
+        }
+    }
+}
