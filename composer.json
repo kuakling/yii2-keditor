@@ -12,7 +12,8 @@
     ],
     "require": {
         "yiisoft/yii2": "*",
-        "bower-asset/ckeditor": "*"
+        "bower-asset/ckeditor": "*",
+        "bower-asset/kcfinder": "*"
     },
     "autoload": {
         "psr-4": {
