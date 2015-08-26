@@ -73,12 +73,12 @@ class Ckeditor extends InputWidget
     public function registerScript()
     {
         $clientOptions = (count($this->options)) ? Json::encode($this->options) : '';
-        $this->getView()->registerJs("jQuery('#".Html::getInputId($this->model, $this->attribute)."').redactor({$clientOptions});");
+        $this->getView()->registerJs("jQuery('#".Html::getInputId($this->model, $this->attribute)."').ckeditor({$clientOptions});");
     }
 
     public function registerAssetBundle()
     {
-        $this->_assetBundle = RedactorAsset::register($this->getView());
+        $this->_assetBundle = CkeditorAsset::register($this->getView());
     }
 
     public function getAssetBundle()
