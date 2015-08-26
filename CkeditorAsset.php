@@ -13,7 +13,6 @@ class MaterializeAsset extends AssetBundle
 {
     public $sourcePath = '@bower/ckeditor';
     public $css = [
-        'css/materialize.min.css',
     ];
     public $js = [
       'ckeditor.js',
