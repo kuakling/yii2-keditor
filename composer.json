@@ -23,7 +23,9 @@
     "extra": {
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
-            "bower-asset-library": "vendor/bower"
+            "bower-asset-library": "vendor/bower",
+            "ckeditor": "vendor/kuakling/ckeditor",
+            "sunhater": "vendor/kuakling/kcfinder"
         }
     }
 }
