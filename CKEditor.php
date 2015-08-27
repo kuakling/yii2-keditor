@@ -54,21 +54,7 @@ class CKEditor extends InputWidget
             $this->clientOptions = ArrayHelper::merge($this->clientOptions, $browse);
             $kcfOptions = [
                 'disabled' => false,
-                'uploadURL' => \Yii::getAlias('@web').'/upload',
-                'access' => [
-                    'files' => [
-                        'upload' => true,
-                        'delete' => false,
-                        'copy' => false,
-                        'move' => false,
-                        'rename' => false,
-                    ],
-                    'dirs' => [
-                        'create' => true,
-                        'delete' => false,
-                        'rename' => false,
-                    ],
-                ],
+                'uploadURL' => \Yii::getAlias('@web').'/uploads',
             ];
             \Yii::$app->session->set('KCFINDER', $kcfOptions);
         }
