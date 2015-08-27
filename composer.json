@@ -21,9 +21,6 @@
         }
     },
     "extra": {
-        "installer-paths": {
-            "vendor/kuakling/yii2-keditor": ["ckeditor/ckeditor", "sunhater/kcfinder"]
-        },
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower"
