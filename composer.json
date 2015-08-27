@@ -21,11 +21,13 @@
         }
     },
     "extra": {
+        "installer-paths": {
+            "ckeditor": "vendor/kuakling/ckeditor",
+            "sunhater": "vendor/kuakling/kcfinder"
+        },
         "asset-installer-paths": {
             "npm-asset-library": "vendor/npm",
             "bower-asset-library": "vendor/bower",
-            "ckeditor": "vendor/kuakling/yii2-keditor/ckeditor",
-            "sunhater": "vendor/kuakling/yii2-keditor/kcfinder"
         }
     }
 }
