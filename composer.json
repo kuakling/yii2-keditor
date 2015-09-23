@@ -13,7 +13,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "ckeditor/ckeditor": "*",
-        "sunhater/kcfinder": "dev-master"
+        "sunhater/kcfinder": "*"
     },
     "autoload": {
         "psr-4": {
