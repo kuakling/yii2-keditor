@@ -10,6 +10,8 @@
             "email": "kuakling@gmail.com"
         }
     ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "yiisoft/yii2": "*",
         "ckeditor/ckeditor": "*",
