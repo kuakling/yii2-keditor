@@ -2,6 +2,7 @@
 
 namespace kuakling\keditor;
 
+use Yii;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
@@ -13,10 +14,22 @@ class CKEditor extends InputWidget
      * @inheritdoc
      */
     public $filemanager = false;
+
+    public $uploadDir = '';
+
+    public $uploadURL = '';
+
     public function init()
     {
         parent::init();
         $this->initOptions();
+
+        if(empty($this->uploadDir)){
+            $this->uploadDir = Yii::$app->request->project()->basePath.DIRECTORY_SEPARATOR.'UserFiles';
+        }
+        if(empty($this->uploadURL)){
+            $this->uploadURL = Yii::$app->request->project()->baseUrl.'/UserFiles';
+        }
     }
     /**
      * @inheritdoc
@@ -54,9 +67,10 @@ class CKEditor extends InputWidget
             $this->clientOptions = ArrayHelper::merge($this->clientOptions, $browse);
             $kcfOptions = [
                 'disabled' => false,
-                'uploadURL' => \Yii::getAlias('@web').'/uploads',
+                'uploadDir' => $this->uploadDir,
+                'uploadURL' => $this->uploadURL,
             ];
-            \Yii::$app->session->set('KCFINDER', $kcfOptions);
+            Yii::$app->session->set('KCFINDER', $kcfOptions);
         }
 
         $options = $this->clientOptions !== false && !empty($this->clientOptions)
