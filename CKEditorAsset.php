@@ -11,7 +11,7 @@ use yii\web\AssetBundle;
  */
 class CKEditorAsset extends AssetBundle
 {
-    public $sourcePath = '@vendor/ckeditor/ckeditor';
+    public $sourcePath = '@vendor/benit/ckeditor-dev';
     public $css = [
     ];
     public $js = [
