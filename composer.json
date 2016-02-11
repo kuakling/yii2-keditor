@@ -15,7 +15,7 @@
     "require": {
         "yiisoft/yii2": "*",
         "benit/ckeditor-dev": "*",
-        "sunhater/kcfinder": "stable"
+        "sunhater/kcfinder": "3.12"
     },
     "autoload": {
         "psr-4": {
