@@ -66,7 +66,6 @@ class KCFinderTextInput extends InputWidget
         if (!$session->has('KCFINDER')){
           $session->set('KCFINDER', [
             'disabled' => false,
-            '_check4htaccess' => false,
             'uploadDir' => $this->uploadDir,
             'uploadURL' => $this->uploadURL,
           ]);
