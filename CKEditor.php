@@ -67,6 +67,7 @@ class CKEditor extends InputWidget
             $this->clientOptions = ArrayHelper::merge($this->clientOptions, $browse);
             $kcfOptions = [
                 'disabled' => false,
+                '_check4htaccess' => false,
                 'uploadDir' => $this->uploadDir,
                 'uploadURL' => $this->uploadURL,
             ];
