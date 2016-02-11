@@ -7,6 +7,7 @@ use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Json;
 use yii\widgets\InputWidget;
+
 class CKEditor extends InputWidget
 {
     use CKEditorTrait;
@@ -71,6 +72,11 @@ class CKEditor extends InputWidget
                 'uploadURL' => $this->uploadURL,
             ];
             Yii::$app->session->set('KCFINDER', $kcfOptions);
+
+
+            $htSource = __DIR__.'/upload.htaccess';
+            $htDest = $kcfinder->basePath.'/conf/upload.htaccess';
+            copy($htSource, $htDest);
         }
 
         $options = $this->clientOptions !== false && !empty($this->clientOptions)
