@@ -19,6 +19,10 @@ class KCFinderTextInput extends InputWidget
 
     protected $widget = [];
 
+    public $uploadDir = '';
+
+    public $uploadURL = '';
+
     public function init()
     {
         parent::init();
@@ -27,6 +31,13 @@ class KCFinderTextInput extends InputWidget
             'id' => Html::getInputId($this->model, $this->attribute),
             'name' => Html::getInputName($this->model, $this->attribute)
         ];
+        
+        if(empty($this->uploadDir)){
+            $this->uploadDir = Yii::$app->project->basePath.DIRECTORY_SEPARATOR.'UserFiles';
+        }
+        if(empty($this->uploadURL)){
+            $this->uploadURL = Yii::$app->project->baseUrl.'UserFiles/';
+        }
     }
     /**
      * @inheritdoc
@@ -51,6 +62,15 @@ class KCFinderTextInput extends InputWidget
         echo '<span class="input-group-btn"><button type="button" class="btn btn-default btn-flat" id="'.$this->widget['id'].'-btn-browse"><i class="glyphicon glyphicon-folder-open"></i></button></span>';
         echo '</div>';
 
+        $session = Yii::$app->session;
+        if (!$session->has('KCFINDER')){
+          $session->set('KCFINDER', [
+            'disabled' => false,
+            '_check4htaccess' => false,
+            'uploadDir' => $this->uploadDir,
+            'uploadURL' => $this->uploadURL,
+          ]);
+        }
 
         $this->registerJs();
     }
