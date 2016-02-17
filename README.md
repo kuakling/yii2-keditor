@@ -31,7 +31,8 @@ Once the extension is installed, simply use it in your code by :
 
 Convert textarea to CKEditor
 ```php
-<?= $form->field($model, 'detail')->widget(
+<?php
+echo $form->field($model, 'detail')->widget(
   \kuakling\keditor\CKEditor::className(), 
   [
     'filemanager'=>true, //true = enabled kcfinder, false = disabled kcfinder
