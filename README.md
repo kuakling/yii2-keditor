@@ -30,4 +30,10 @@ Usage
 Once the extension is installed, simply use it in your code by :
 
 ```php
-<?= \kuakling\keditor\AutoloadExample::widget(); ?>```
+<?= $form->field($model, 'detail')->widget(
+  \kuakling\keditor\CKEditor::className(), 
+  [
+    'filemanager'=>true, //true = enabled kcfinder, false = disabled kcfinder
+    'preset'=>'full' //toolbar -> basic, standard, full
+  ]
+)->label(false); ?>```
