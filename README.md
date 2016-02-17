@@ -35,6 +35,8 @@ Convert textarea to CKEditor
 echo $form->field($model, 'detail')->widget(
   \kuakling\keditor\CKEditor::className(), 
   [
+    'uploadDir' => '/var/www/public_html/UserFiles',
+    'uploadURL' => '/UserFiles/',
     'filemanager'=>true, //true = enabled kcfinder, false = disabled kcfinder
     'preset'=>'full' //toolbar -> basic, standard, full
   ]
