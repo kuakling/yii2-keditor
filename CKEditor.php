@@ -27,10 +27,11 @@ class CKEditor extends InputWidget
         $this->initOptions();
 
         if(empty($this->uploadDir)){
-            $this->uploadDir = Yii::$app->project->basePath.DIRECTORY_SEPARATOR.'UserFiles';
+            //$this->uploadDir = Yii::$app->project->basePath.DIRECTORY_SEPARATOR.'UserFiles';
+            $this->uploadDir = Yii::getAlias('@webroot/UserFiles');
         }
         if(empty($this->uploadURL)){
-            $this->uploadURL = Yii::$app->project->baseUrl.'UserFiles/';
+            $this->uploadURL = Yii::getAlias('@web/UserFiles');
         }
     }
     /**
