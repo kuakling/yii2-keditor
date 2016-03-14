@@ -14,7 +14,7 @@
     "prefer-stable": true,
     "require": {
         "yiisoft/yii2": "*",
-        "ckeditor/ckeditor": "*",
+        "benit/ckeditor-dev": "*",
         "tinymce/tinymce": ">=4",
         "sunhater/kcfinder": "*"
     },
