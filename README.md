@@ -32,6 +32,7 @@ Once the extension is installed, simply use it in your code by :
 Convert textarea to CKEditor
 ```php
 <?php
+//CKEditor
 echo $form->field($model, 'detail')->widget(
   \kuakling\keditor\CKEditor::className(), 
   [
@@ -41,6 +42,20 @@ echo $form->field($model, 'detail')->widget(
     'preset'=>'full' //toolbar -> basic, standard, full
   ]
 )->label(false); ?>
+```
+
+```php
+<?php
+//TinyMce
+echo $form->field($model, 'detail')->widget(
+  \kuakling\keditor\TinyMce::className(), 
+  [
+    'uploadDir' => '/var/www/public_html/UserFiles',
+    'uploadURL' => '/UserFiles/',
+    'enableFilemanager' => true,
+    'folderName' => ['file'=> 'File', 'image'=>'Image', 'media'=>'Media'],
+  ]
+); ?>
 ```
 
 Using textinput choose file in server and return filename to textinput by CKFinder
