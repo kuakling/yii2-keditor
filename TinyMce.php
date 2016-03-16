@@ -20,6 +20,8 @@ class TinyMce extends InputWidget
 
     public $enableFilemanager = false;
 
+    public $folderName = ['file' => 'file', 'image'=>'image', 'media' => 'media'];
+
 
     protected $uploadDir = '';
 
@@ -66,6 +68,7 @@ class TinyMce extends InputWidget
             'toolbar1' => "undo redo | bold italic underline | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | styleselect",
             'toolbar2' => "| link unlink anchor | image media | forecolor backcolor ",
             'height' => '500px',
+            'relative_urls' => false,
         ];
         $this->clientOptions['selector'] = "#$id";
         
@@ -82,8 +85,9 @@ class TinyMce extends InputWidget
             $kcfinder = KCFinderAsset::register($view);
             $this->clientOptions['file_browser_callback'] = new \yii\web\JsExpression("
             function(field, url, type, win) {
+                var fileType = ".Json::encode($this->folderName).";
                 tinyMCE.activeEditor.windowManager.open({
-                    file: '".$kcfinder->baseUrl."/browse.php?opener=tinymce4&field=' + field + '&type=' + type,
+                    file: '".$kcfinder->baseUrl."/browse.php?opener=tinymce4&field=' + field + '&type=' + fileType[type],
                     title: 'File manager',
                     width: 700,
                     height: 500,
