@@ -1,8 +1,6 @@
 <?php
 namespace kuakling\keditor;
-
 use yii\web\AssetBundle;
-
 /**
  * Asset bundle for the Materialize css files.
  *
